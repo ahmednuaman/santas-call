@@ -8,6 +8,7 @@ const path = require('path')
 const src = path.resolve(CWD, 'src')
 const webpack = require('webpack')
 const WebpackCleanPlugin = require('clean-webpack-plugin')
+const WebpackCopyPlugin = require('copy-webpack-plugin')
 const WebpackExtractTextPlugin = require('extract-text-webpack-plugin')
 const WebpackProgressBarPlugin = require('progress-bar-webpack-plugin')
 
@@ -52,7 +53,7 @@ let config = {
       loader: 'babel?compact=false'
     }, {
       test: /\.pug$/,
-      loader: WebpackExtractTextPlugin.extract('html', 'pug-html')
+      loader: WebpackExtractTextPlugin.extract('html', 'pug-html?pretty=true&exports=false')
     }, {
       test: /\.scss$/,
       loader: WebpackExtractTextPlugin.extract('style', 'css!sass')
@@ -74,6 +75,9 @@ let config = {
     new WebpackProgressBarPlugin(),
     new WebpackExtractTextPlugin('[name]', {
       allChunks: true
+    }),
+    new WebpackCopyPlugin({
+      from: './img/favicon.ico'
     })
   ]
 }
