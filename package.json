@@ -1,0 +1,74 @@
+{
+  "name": "signalup-frontend",
+  "version": "1.0.0",
+  "description": "The frontend for Signalup",
+  "scripts": {
+    "build": "concurrently \"npm test\" \"npm run webpack -- -p\"",
+    "browser-sync": "node ./browser-sync.js",
+    "local": "concurrently \"npm run browser-sync\" \"npm run watch\"",
+    "start": "npm run local",
+    "test": "standard",
+    "watch": "concurrently \"npm run webpack -- --watch -d\" \"npm run watch:lint\"",
+    "watch:lint": "onchange \"**/*.js\" -- standard",
+    "webpack": "webpack --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmednuaman/signalup-frontend.git"
+  },
+  "keywords": [
+    "qlikview"
+  ],
+  "author": "Ahmed Nuaman (ahmed@ahmednuaman.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmednuaman/signalup-frontend/issues"
+  },
+  "homepage": "https://github.com/ahmednuaman/signalup-frontend#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-lodash": "^3.2.10",
+    "babel-preset-latest": "^6.16.0",
+    "browser-sync": "^2.18.2",
+    "clean-webpack-plugin": "^0.1.14",
+    "concurrently": "^3.1.0",
+    "css-loader": "^0.26.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "img-loader": "^1.3.1",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.13.0",
+    "onchange": "^3.0.2",
+    "progress-bar-webpack-plugin": "^1.9.0",
+    "pug": "^2.0.0-beta6",
+    "pug-html-loader": "^1.0.9",
+    "pug-loader": "^2.3.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^4.0.2",
+    "standard": "^8.6.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "validator": "^6.1.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-middleware": "^1.8.4"
+  },
+  "babel": {
+    "plugins": [
+      "lodash"
+    ],
+    "presets": [
+      "latest"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "build"
+    ]
+  },
+  "dependencies": {
+    "bourbon": "^4.2.7",
+    "font-awesome": "^4.7.0"
+  }
+}

@@ -1,0 +1,13 @@
+$fa-font-path: '~font-awesome/fonts/';
+@import '~font-awesome/scss/font-awesome';
+
+@import '~bourbon/app/assets/stylesheets/bourbon';
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  @include linear-gradient(color('blue', 'darken-4'), color('blue', 'base'));
+}
