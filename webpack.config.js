@@ -53,7 +53,7 @@ let config = {
       loader: 'babel?compact=false'
     }, {
       test: /\.pug$/,
-      loader: WebpackExtractTextPlugin.extract('html', 'pug-html?pretty=true&exports=false')
+      loader: WebpackExtractTextPlugin.extract('html', 'pug-html')
     }, {
       test: /\.scss$/,
       loader: WebpackExtractTextPlugin.extract('style', 'css!sass')
@@ -76,9 +76,9 @@ let config = {
     new WebpackExtractTextPlugin('[name]', {
       allChunks: true
     }),
-    new WebpackCopyPlugin({
+    new WebpackCopyPlugin([{
       from: './img/favicon.ico'
-    })
+    }])
   ]
 }
 
