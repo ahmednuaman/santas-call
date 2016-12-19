@@ -8,7 +8,7 @@ const path = require('path')
 const src = path.resolve(CWD, 'src')
 const webpack = require('webpack')
 const WebpackCleanPlugin = require('clean-webpack-plugin')
-const WebpackHtmlWebpackPlugin = require('html-webpack-plugin')
+const WebpackExtractTextPlugin = require('extract-text-webpack-plugin')
 const WebpackProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 let config = {
@@ -52,14 +52,14 @@ let config = {
       loader: 'babel?compact=false'
     }, {
       test: /\.pug$/,
-      loader: WebpackExtractTextPlugin.extract('raw', 'html!pug-html')
+      loader: WebpackExtractTextPlugin.extract('html', 'pug-html')
     }, {
       test: /\.scss$/,
       loader: WebpackExtractTextPlugin.extract('style', 'css!sass')
     }]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json', '.jpg', '.jpeg', '.gif', '.png', '.pug'],
+    extensions: ['', '.js', '.jsx', '.json', '.jpg', '.jpeg', '.gif', '.png', '.pug', '.scss'],
     alias: {
       img: `${src}/img/`
     }
