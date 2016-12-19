@@ -28,23 +28,18 @@ h3 {
 
 .container {
   position: absolute;
-  display: flex;
+  display: block;
   width: 100%;
   height: 100%;
-  flex-direction: column;
-  align-items: stretch;
-  align-content: space-between;
+  text-align: center;
 }
 
 .items {
-  display: flex;
-  flex: 1;
+  display: block;
+  width: 100%;
 }
 
 #santa {
-  flex-direction: column;
-  text-align: center;
-
   #avatar {
     display: block;
     position: relative;
@@ -65,14 +60,36 @@ h3 {
 }
 
 #controls {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  height: 100px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
+  height: 20%;
   
   .controls {
-    display: flex;
-    margin: 0 80px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, .5) 1px 4px 5px;
+    border-radius: 50%;
+
+    .fa {
+      border-radius: 1em;
+      width: 2em;
+      height: 2em;
+      font-size: 2em;
+      background: #FD423A;
+      line-height: 2em;      
+    }
+
+    &:first-child {
+      margin-right: 5em;
+    }
+
+    &#reject .fa {
+      transform: rotate(135deg);
+    }
+
+    &#accept .fa {
+      background: #50D968;
+    }
   }
 }
