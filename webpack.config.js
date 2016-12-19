@@ -29,19 +29,19 @@ let config = {
   module: {
     loaders: [{
       test: /\.woff2?/,
-      loader: 'url?limit=10000&mimetype=application/font-woff&name=/asset/font/[name].[ext]?[hash]'
+      loader: 'url?limit=10000&mimetype=application/font-woff&name=asset/font/[name].[ext]?[hash]'
     }, {
       test: /\.ttf/,
-      loader: 'url?limit=10000&mimetype=application/octet-stream&name=/asset/font/[name].[ext]?[hash]'
+      loader: 'url?limit=10000&mimetype=application/octet-stream&name=asset/font/[name].[ext]?[hash]'
     }, {
       test: /\.eot/,
-      loader: 'file?name=/asset/font/[name].[ext]?[hash]'
+      loader: 'file?name=asset/font/[name].[ext]?[hash]'
     }, {
       test: /\.svg/,
-      loader: 'url?limit=10000&mimetype=image/svg+xml&name=/asset/font/[name].[ext]?[hash]'
+      loader: 'url?limit=10000&mimetype=image/svg+xml&name=asset/font/[name].[ext]?[hash]'
     }, {
       test: /img\/.+\.(jpe?g|png|gif)$/,
-      loader: 'url?limit=1000&name=/asset/img/[name].[ext]?[hash]!img?progressive=true'
+      loader: 'url?limit=1000&name=asset/img/[name].[ext]?[hash]!img?progressive=true'
     }, {
       test: /\.json$/,
       loader: 'json'
