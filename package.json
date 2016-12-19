@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "The frontend for Signalup",
   "scripts": {
-    "build": "concurrently \"npm test\" \"npm run webpack -- -p\"",
     "browser-sync": "node ./browser-sync.js",
+    "build": "concurrently \"npm test\" \"npm run webpack -- -p\"",
+    "deploy": "npm run build && bash ./deploy.sh",
     "local": "concurrently \"npm run browser-sync\" \"npm run watch\"",
     "start": "npm run local",
     "test": "standard",
