@@ -69,6 +69,7 @@
   },
   "dependencies": {
     "bourbon": "^4.2.7",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "roboto-fontface": "^0.6.0"
   }
 }
