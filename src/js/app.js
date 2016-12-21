@@ -1,6 +1,6 @@
 const buttons = document.getElementsByClassName('controls')
 const controls = document.getElementById('controls')
-const vibrate = window.navigator.vibrate || window.navigator.webkitVibrate || window.navigator.mozVibrate || window.navigator.msVibrate
+const vibrate = (window.navigator.vibrate || window.navigator.webkitVibrate || window.navigator.mozVibrate || window.navigator.msVibrate).bind(window.navigator)
 
 for (const button of buttons) {
   button.addEventListener('click', (event) => {
