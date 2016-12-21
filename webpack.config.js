@@ -35,7 +35,7 @@ let config = {
       loader: 'url?limit=10000&mimetype=application/octet-stream&name=/asset/font/[name].[ext]?[hash]'
     }, {
       test: /\.eot/,
-      loader: 'file?name=/asset/font/[name].[ext]?[hash]'
+      loader: 'url?limit=10000&mimetype=application/vnd.ms-fontobject&name=/asset/font/[name].[ext]?[hash]'
     }, {
       test: /\.svg/,
       loader: 'url?limit=10000&mimetype=image/svg+xml&name=/asset/font/[name].[ext]?[hash]'
@@ -53,7 +53,7 @@ let config = {
       loader: 'babel?compact=false'
     }, {
       test: /\.pug$/,
-      loader: WebpackExtractTextPlugin.extract('html', 'pug-html')
+      loader: WebpackExtractTextPlugin.extract('html', 'apply!pug')
     }, {
       test: /\.scss$/,
       loader: WebpackExtractTextPlugin.extract('style', 'css!sass')

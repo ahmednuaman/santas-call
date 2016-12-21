@@ -4,7 +4,7 @@
   "description": "The frontend for Signalup",
   "scripts": {
     "browser-sync": "node ./browser-sync.js",
-    "build": "concurrently \"npm test\" \"npm run webpack -- -p\"",
+    "build": "concurrently \"npm test\" \"npm run webpack\"",
     "deploy": "npm run build && bash ./deploy.sh",
     "local": "concurrently \"npm run browser-sync\" \"npm run watch\"",
     "start": "npm run local",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/ahmednuaman/signalup-frontend#readme",
   "devDependencies": {
+    "apply-loader": "^0.1.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
     "babel-plugin-lodash": "^3.2.10",
@@ -45,8 +46,7 @@
     "onchange": "^3.0.2",
     "progress-bar-webpack-plugin": "^1.9.0",
     "pug": "^2.0.0-beta6",
-    "pug-html-loader": "^1.0.9",
-    "raw-loader": "^0.5.1",
+    "pug-loader": "^2.3.0",
     "sass-loader": "^4.0.2",
     "standard": "^8.6.0",
     "style-loader": "^0.13.1",
