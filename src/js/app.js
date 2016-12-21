@@ -1,6 +1,6 @@
 const buttons = document.getElementsByClassName('controls')
 const controls = document.getElementById('controls')
-const vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate
+const vibrate = window.navigator.vibrate || window.navigator.webkitVibrate || window.navigator.mozVibrate || window.navigator.msVibrate
 
 for (const button of buttons) {
   button.addEventListener('click', (event) => {
@@ -12,4 +12,5 @@ for (const button of buttons) {
   })
 }
 
+window.scrollTo(0, 1)
 vibrate([1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500])
